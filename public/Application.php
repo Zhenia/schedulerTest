@@ -44,16 +44,5 @@ class Application{
         return $result;
     }
 
-    public function addCheck($time) {
-        array_push ($this->checks,(int)$time);
-        $this->sortCheck();
-        return $this;
-    }
-
-    public function sortCheck(){
-        asort($this->checks);
-        return true;
-    }
-
 
 }
