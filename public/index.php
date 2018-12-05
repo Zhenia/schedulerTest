@@ -9,15 +9,6 @@ require './Scheduler.php';
 
 date_default_timezone_set('UTC');
 
-function parseTime($time){
-    $arrTime = explode(":",$time);
-    if(count($arrTime)!=2){
-        echo 'Exception: wrong time format';
-    }
-    $timeUtc = $arrTime[0]*60+$arrTime[0];
-    return $timeUtc;
-}
-
 /** @var  $scheduler Scheduler*/
 $scheduler = new Scheduler();
 $scheduler->load(200);
@@ -49,6 +40,15 @@ $application = $scheduler->getApplicationById(191);
 if ($application){
     $checks = $application->getNextChecks(5);
     print_r('<br/> 5 checks time afrer now for app 180: '.implode(',',$checks));
+}
+
+function parseTime($time){
+    $arrTime = explode(":",$time);
+    if(count($arrTime) != 2){
+        echo 'Exception: wrong time format';
+    }
+    $timeUtc = $arrTime[0]*60 + $arrTime[0];
+    return $timeUtc;
 }
 
 

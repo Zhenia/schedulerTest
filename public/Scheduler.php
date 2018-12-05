@@ -15,7 +15,7 @@ class Scheduler
     }
 
     public function load($count, $start = 1){
-        for($i=$start; $i<$count; $i++){
+        for($i = $start; $i<$count; $i++){
             $application = $this->loadApplicationById($i);
             $this->applications[$i] = $application;
         }

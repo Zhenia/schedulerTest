@@ -37,7 +37,7 @@ class Application{
                $result[$key] = $check;
                $i++;
             }
-            if ($i==$count or !next($this->checks)){
+            if ($i == $count or !next($this->checks)){
                break;
             }
         }
