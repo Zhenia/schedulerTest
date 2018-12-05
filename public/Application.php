@@ -3,8 +3,8 @@
 namespace App;
 
 class Application{
-    public $id;
-    public $checks;
+    private $id;
+    private $checks;
 
     public function __construct($id = null,$checks = []) {
         $this->id = $id;
